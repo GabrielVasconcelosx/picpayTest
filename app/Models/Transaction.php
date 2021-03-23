@@ -19,7 +19,6 @@ class Transaction extends Model
         "id_user_payer" => "required",
         "id_user_payee" => "required",
         "value" => "required",
-
     ];
 
 }
