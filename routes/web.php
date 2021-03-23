@@ -18,6 +18,10 @@ $router->get('/', function () use ($router) {
 });
 
 
-$router->get('profile', [
-    'as' => 'profile', 'uses' => 'UserController@showProfile'
-]);
+$router->group(['prefix' => 'users'], function () use ($router) {
+    $router->get('/', 'UsersController@index');
+    $router->get('/{id}', 'UsersController@show');
+    $router->post('/', 'UsersController@store');
+    $router->put('/{id}', 'UsersController@update');
+    $router->delete('/{id}', 'UsersController@destroy');
+});
