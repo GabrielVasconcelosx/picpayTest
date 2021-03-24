@@ -17,6 +17,7 @@ class CreateTransactionsTable extends Migration
             $table->id();
             $table->integer('id_user_payer');
             $table->integer('id_user_payee');
+            $table->integer('status_id');
             $table->double('value', 8, 2);
             $table->timestamps();
         });

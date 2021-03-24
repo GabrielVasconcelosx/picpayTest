@@ -18,9 +18,10 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email');
             $table->string('password');
+            $table->double('balance',8,2)->default(0);
             $table->string('cnpj')->nullable();
             $table->string('cpf')->nullable();
-            $table->integer('type');
+            $table->boolean('is_shopkeeper')->default(0);
             $table->timestamps();
         });
     }

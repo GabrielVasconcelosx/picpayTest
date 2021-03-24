@@ -26,6 +26,7 @@ $router->group(['prefix' => 'users'], function () use ($router) {
     $router->delete('/{id}', 'UsersController@destroy');
 });
 
-$router->group(['prefix' => 'users'], function () use ($router) {
-    $router->post('/{payee}/{payer}', 'TransactionController@store');
+$router->group(['prefix' => 'transaction'], function () use ($router) {
+    $router->post('/', 'TransactionController@store');
+    $router->post('add-cash/{id}', 'TransactionController@addCash');
 });
